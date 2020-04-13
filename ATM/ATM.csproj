@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BDF80511-D305-4249-A04D-DD51C7B7CD7E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ATM</RootNamespace>
+    <AssemblyName>ATM</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Startup.cs" />
+    <Compile Include="Services\Amount.cs" />
+    <Compile Include="Models\Atm.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Enums\Choice.cs" />
+    <Compile Include="Data\ConsoleClear.cs" />
+    <Compile Include="Data\ConsoleDataWriter.cs" />
+    <Compile Include="Data\ConsoleDataReader.cs" />
+    <Compile Include="Data\IDataClear.cs" />
+    <Compile Include="Services\IAmountChecker.cs" />
+    <Compile Include="Data\IDataWriter.cs" />
+    <Compile Include="Data\IDataReader.cs" />
+    <Compile Include="Services\IImporter.cs" />
+    <Compile Include="Services\IMenuOption.cs" />
+    <Compile Include="Services\Import.cs" />
+    <Compile Include="Services\IOptionsAvailable.cs" />
+    <Compile Include="Services\IPINChanger.cs" />
+    <Compile Include="Services\IWithdrawaler.cs" />
+    <Compile Include="Services\Menu.cs" />
+    <Compile Include="Models\Options.cs" />
+    <Compile Include="Services\PIN.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Enums\SwitchOptions.cs" />
+    <Compile Include="Services\Withdrawal.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
